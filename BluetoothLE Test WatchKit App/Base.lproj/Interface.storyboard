@@ -16,12 +16,21 @@
                         </label>
                         <button width="1" alignment="left" title="Button" id="PCe-Ga-hxz">
                             <variation key="device=watch38mm" title="Open"/>
+                            <connections>
+                                <action selector="openButton" destination="AgC-eL-Hgc" id="dJs-hk-cfk"/>
+                            </connections>
                         </button>
                         <button width="1" alignment="left" title="Button" id="s2U-Mc-bMG">
                             <variation key="device=watch38mm" title="Close"/>
+                            <connections>
+                                <action selector="closeButton" destination="AgC-eL-Hgc" id="Btu-WE-bHH"/>
+                            </connections>
                         </button>
                         <button width="1" alignment="left" title="Button" id="P1K-GD-oK6">
                             <variation key="device=watch38mm" title="Stop"/>
+                            <connections>
+                                <action selector="stopButton" destination="AgC-eL-Hgc" id="61E-ht-NJr"/>
+                            </connections>
                         </button>
                     </items>
                     <variation key="default">

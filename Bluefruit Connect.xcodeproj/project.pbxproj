@@ -116,6 +116,8 @@
 		22C2B9701AEEBB25008050FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22C2B9721AEEBB25008050FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		22C2B9741AEEBB26008050FF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		22CF991D1AF0E2680005EA3A /* BluetoothLE Test.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BluetoothLE Test.entitlements"; sourceTree = "<group>"; };
+		22CF991E1AF0E3090005EA3A /* BluetoothLE Test WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "BluetoothLE Test WatchKit Extension.entitlements"; sourceTree = "<group>"; };
 		F02E54D918AE94E1006AE85A /* NSData+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+hex.h"; sourceTree = "<group>"; };
 		F02E54DA18AE94E1006AE85A /* NSData+hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+hex.m"; sourceTree = "<group>"; };
 		F05494891893188D007C7284 /* NSString+hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+hex.h"; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 		22C2B9601AEEBB25008050FF /* BluetoothLE Test WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				22CF991E1AF0E3090005EA3A /* BluetoothLE Test WatchKit Extension.entitlements */,
 				22C2B9631AEEBB25008050FF /* InterfaceController.h */,
 				22C2B9641AEEBB25008050FF /* InterfaceController.m */,
 				22C2B9661AEEBB25008050FF /* Images.xcassets */,
@@ -285,6 +288,7 @@
 		F0A2C95D16BBE44500F2FD12 = {
 			isa = PBXGroup;
 			children = (
+				22CF991D1AF0E2680005EA3A /* BluetoothLE Test.entitlements */,
 				F0A2C96F16BBE44500F2FD12 /* Classes */,
 				F0C47BFD16C229CE002EFADA /* Images */,
 				22C2B9601AEEBB25008050FF /* BluetoothLE Test WatchKit Extension */,
@@ -481,6 +485,11 @@
 					22C2B95E1AEEBB25008050FF = {
 						CreatedOnToolsVersion = 6.4;
 						DevelopmentTeam = 9HPM6M8DGJ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					22C2B9691AEEBB25008050FF = {
 						CreatedOnToolsVersion = 6.4;
@@ -488,6 +497,11 @@
 					};
 					F0A2C96516BBE44500F2FD12 = {
 						DevelopmentTeam = 9HPM6M8DGJ;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -733,6 +747,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "BluetoothLE Test WatchKit Extension/BluetoothLE Test WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -752,6 +767,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -764,6 +780,7 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_ENTITLEMENTS = "BluetoothLE Test WatchKit Extension/BluetoothLE Test WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -781,6 +798,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -847,6 +865,7 @@
 		F0A2C99316BBE44500F2FD12 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BluetoothLE Test.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -863,6 +882,7 @@
 		F0A2C99416BBE44500F2FD12 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "BluetoothLE Test.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;

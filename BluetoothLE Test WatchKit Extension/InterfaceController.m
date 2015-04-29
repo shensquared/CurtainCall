@@ -32,6 +32,17 @@
     [super didDeactivate];
 }
 
+
+- (IBAction)openButton {
+}
+
+- (IBAction)closeButton {
+}
+
+- (IBAction)stopButton {
+}
+
+
 @end
 
 
