@@ -886,6 +886,7 @@
 				22C2B97B1AEEBB26008050FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22C2B97C1AEEBB26008050FF /* Build configuration list for PBXNativeTarget "BluetoothLE Test WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -894,6 +895,7 @@
 				22C2B97E1AEEBB26008050FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F0A2C96116BBE44500F2FD12 /* Build configuration list for PBXProject "Bluefruit Connect" */ = {
 			isa = XCConfigurationList;
