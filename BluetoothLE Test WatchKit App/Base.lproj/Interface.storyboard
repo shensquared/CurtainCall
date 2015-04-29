@@ -1,15 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="14E11f" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider=""/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label width="100" alignment="left" text="Label" textAlignment="center" id="NCO-5C-mSd">
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                            <variation key="device=watch38mm" text="Curtain Call" width="136"/>
+                        </label>
+                        <button width="1" alignment="left" title="Button" id="PCe-Ga-hxz">
+                            <variation key="device=watch38mm" title="Open"/>
+                        </button>
+                        <button width="1" alignment="left" title="Button" id="s2U-Mc-bMG">
+                            <variation key="device=watch38mm" title="Close"/>
+                        </button>
+                        <button width="1" alignment="left" title="Button" id="P1K-GD-oK6">
+                            <variation key="device=watch38mm" title="Stop"/>
+                        </button>
+                    </items>
+                    <variation key="default">
+                        <mask key="items">
+                            <exclude reference="NCO-5C-mSd"/>
+                            <exclude reference="PCe-Ga-hxz"/>
+                            <exclude reference="s2U-Mc-bMG"/>
+                            <exclude reference="P1K-GD-oK6"/>
+                        </mask>
+                    </variation>
+                    <variation key="device=watch38mm">
+                        <mask key="items">
+                            <include reference="NCO-5C-mSd"/>
+                            <include reference="PCe-Ga-hxz"/>
+                            <include reference="s2U-Mc-bMG"/>
+                            <include reference="P1K-GD-oK6"/>
+                        </mask>
+                    </variation>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="294" y="11"/>
         </scene>
     </scenes>
 </document>
