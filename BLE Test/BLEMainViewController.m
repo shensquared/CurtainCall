@@ -436,7 +436,7 @@
 
     //Debug
     NSString *hexString = [newData hexRepresentationWithSpaces:YES];
-    NSLog(@"Received: %@", hexString);
+    NSLog(@"Received here: %@", hexString);
     
     if (_connectionStatus == ConnectionStatusConnected || _connectionStatus == ConnectionStatusScanning) {
         //UART
