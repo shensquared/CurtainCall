@@ -360,23 +360,20 @@
     //Respond to user setting a digital pin high/low
     
     //Change relevant cell's value label
-
-
-
     PinCell *cell = [self pinCellForpin:sender.tag];
     if (!cell) return;
     
     int state = sender.selectedSegmentIndex;
-    NSLog(@"MSg:%d",state);
     
-
-
-    [cell setDigitalValue:(PinState) state];
+    
+    
+    
+    
+    
+    
+    [cell setDigitalValue:(PinState)state];
     
     //Send value change to BLEBB
-
-// here's where the magic happens
-
     [self writePinState:state forPin:cell.digitalPin];
     
     
@@ -391,6 +388,20 @@
     
 }
 
+- (void)watchControl{
+    NSString* container =@"group.CurtainCall";
+    NSUserDefaults* defaults=
+    [[NSUserDefaults alloc] initWithSuiteName:container];
+    
+    
+    
+    int pinNumber = [defaults integerForKey:@"pinNumber"];
+    int pinState=[defaults integerForKey:@"pinState"];
+    PinCell *watchCell = [self pinCellForpin:pinNumber];
+    [watchCell setDigitalValue:(PinState)pinState];
+    [self writePinState:pinState forPin:pinNumber];
+
+}
 
 - (void)cellButtonTapped:(UIButton*)sender{
     
@@ -619,8 +630,7 @@
     //respond to incoming data
     
 //    [self updateDebugConsoleWithData:newData];
-
-
+    
     uint8_t data[20];
     static uint8_t buf[512];
     static int length = 0;

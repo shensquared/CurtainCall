@@ -37,28 +37,20 @@
     NSString* container =@"group.CurtainCall";
     NSUserDefaults* defaults=
     [[NSUserDefaults alloc] initWithSuiteName:container];
-
-    [defaults setValue:@7 forKey:@"pinNumber"];
-    [defaults setValue:@1 forKey:@"pinState"];
+    
+    [defaults setInteger:7 forKey:@"pinNumber"];
+    
     [defaults synchronize];
+    [defaults setInteger:1 forKey:@"pinState"];
+    [defaults synchronize];
+    
     
 }
 
 - (IBAction)closeButton {
-    NSString* container =@"group.CurtainCall";
-    NSUserDefaults* defaults=
-    [[NSUserDefaults alloc] initWithSuiteName:container];
-
-    [defaults setValue:@8 forKey:@"sharedData"];
-    
-    
 }
 
 - (IBAction)stopButton {
-    NSString* container =@"group.CurtainCall";
-    NSUserDefaults* defaults=
-    [[NSUserDefaults alloc] initWithSuiteName:container];
-    [defaults setValue:@"Low" forKey:@"sharedData"];
 }
 
 
