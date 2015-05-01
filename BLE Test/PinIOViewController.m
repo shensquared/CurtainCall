@@ -394,45 +394,52 @@
     [[NSUserDefaults alloc] initWithSuiteName:container];
     
     int watchMode = [defaults integerForKey:@"watchMode"];
+
+
     PinCell *watchCell7 = [self pinCellForpin:7];
     PinCell *watchCell8 = [self pinCellForpin:8];
     PinMode mode = kPinModeOutput;
+    [watchCell7 setMode:mode];
+    [self writePinMode:mode forPin:7];
+    [watchCell8 setMode:mode];
+            [self writePinMode:mode forPin:8];
 
     switch (watchMode) {
         case 1:
-            [watchCell7 setMode:mode];
-            [self writePinMode:mode forPin:7];
-
+   
             
             [watchCell7 setDigitalValue:(PinState)1];
             [self writePinState:1 forPin:7];
+            [watchCell8 setDigitalValue:(PinState)0];
+            [self writePinState:0 forPin:8];
+            [defaults setBool:NO forKey:@"watchModeChanged"];
+            [defaults synchronize];
+
+
 
             break;
         case 2:
 
-            [watchCell8 setMode:mode];
-            [self writePinMode:mode forPin:8];
+            
             [watchCell8 setDigitalValue:(PinState)1];
             [self writePinState:1 forPin:8];
+            [watchCell7 setDigitalValue:(PinState)0];
+            [self writePinState:0 forPin:7];
+            [defaults setBool:NO forKey:@"watchModeChanged"];
+            [defaults synchronize];
+
             break;
         case 3:
             [watchCell7 setDigitalValue:(PinState)0];
             [self writePinState:0 forPin:7];
             [watchCell8 setDigitalValue:(PinState)0];
             [self writePinState:0 forPin:8];
+            [defaults setBool:NO forKey:@"watchModeChanged"];
+            [defaults synchronize];
             break;
         default:
             break;
     }
-
-
-
-    
-
-    
-
-
-
 
 
 }

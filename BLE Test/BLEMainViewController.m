@@ -449,9 +449,16 @@
         else if (_connectionMode == ConnectionModePinIO){
             //send data to PIN IO Controller
             [_pinIoViewController receiveData:newData];
-
+            NSString* container =@"group.CurtainCall";
+    NSUserDefaults* defaults=
+    [[NSUserDefaults alloc] initWithSuiteName:container];
+    BOOL watchModeChanged = [defaults boolForKey:@"watchModeChanged"];
 // calls for watch control
-            [_pinIoViewController watchControl];
+    if(watchModeChanged){
+         [_pinIoViewController watchControl];
+
+    }
+           
 
 
 
@@ -459,6 +466,16 @@
     }
 }
 
+// - (BOOL) watchModeChanged: (int*) oldMode{
+//     NSString* container =@"group.CurtainCall";
+//     NSUserDefaults* defaults=
+//     [[NSUserDefaults alloc] initWithSuiteName:container];
+    
+//     int watchMode = [defaults integerForKey:@"watchMode"];
+
+//     return watchMode==oldMode;
+
+// }
 
 - (void)peripheralDidDisconnect{
     

@@ -37,6 +37,8 @@
     NSString* container =@"group.CurtainCall";
     NSUserDefaults* defaults=
     [[NSUserDefaults alloc] initWithSuiteName:container];
+    [defaults setBool:YES forKey:@"watchModeChanged"];
+    [defaults synchronize];
     [defaults setInteger:1 forKey:@"watchMode"];
     
     [defaults synchronize];
@@ -49,6 +51,10 @@
       NSString* container =@"group.CurtainCall";
     NSUserDefaults* defaults=
     [[NSUserDefaults alloc] initWithSuiteName:container];
+
+    [defaults setBool:YES forKey:@"watchModeChanged"];
+    [defaults synchronize];
+
     [defaults setInteger:2 forKey:@"watchMode"];
     
     [defaults synchronize];
@@ -58,6 +64,8 @@
   NSString* container =@"group.CurtainCall";
     NSUserDefaults* defaults=
     [[NSUserDefaults alloc] initWithSuiteName:container];
+    [defaults setBool:YES forKey:@"watchModeChanged"];
+    [defaults synchronize];
     [defaults setInteger:3 forKey:@"watchMode"];
     
     [defaults synchronize];
