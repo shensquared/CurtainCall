@@ -37,7 +37,11 @@
     NSString* container =@"group.CurtainCall";
     NSUserDefaults* defaults=
     [[NSUserDefaults alloc] initWithSuiteName:container];
-    
+
+    [defaults setBool: YES forKey:@"watchControlBool"];
+    [defaults synchronize];
+
+
     [defaults setInteger:7 forKey:@"pinNumber"];
     
     [defaults synchronize];
@@ -51,6 +55,16 @@
 }
 
 - (IBAction)stopButton {
+        NSString* container =@"group.CurtainCall";
+    NSUserDefaults* defaults=
+    [[NSUserDefaults alloc] initWithSuiteName:container];
+    
+    [defaults setInteger:7 forKey:@"pinNumber"];
+    
+    [defaults synchronize];
+    [defaults setInteger:0 forKey:@"pinState"];
+    [defaults synchronize];
+
 }
 
 

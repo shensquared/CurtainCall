@@ -393,13 +393,27 @@
     NSUserDefaults* defaults=
     [[NSUserDefaults alloc] initWithSuiteName:container];
     
-    
+    BOOL watchControl =[defaults boolForKey:@"watchControlBool"];
     
     int pinNumber = [defaults integerForKey:@"pinNumber"];
     int pinState=[defaults integerForKey:@"pinState"];
     PinCell *watchCell = [self pinCellForpin:pinNumber];
+
+
+    PinMode mode = kPinModeOutput;
+    [watchCell setMode:mode];
+
+    //Write pin
+    [self writePinMode:mode forPin:pinNumber];
+
     [watchCell setDigitalValue:(PinState)pinState];
     [self writePinState:pinState forPin:pinNumber];
+
+    
+
+
+
+
 
 }
 

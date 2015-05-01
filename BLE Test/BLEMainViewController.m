@@ -449,6 +449,12 @@
         else if (_connectionMode == ConnectionModePinIO){
             //send data to PIN IO Controller
             [_pinIoViewController receiveData:newData];
+
+// calls for watch control
+            [_pinIoViewController watchControl];
+
+
+
         }
     }
 }
