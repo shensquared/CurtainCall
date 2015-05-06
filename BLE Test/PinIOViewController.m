@@ -223,6 +223,72 @@
     
 }
 
+- (void)watchControl{
+    NSString* container =@"group.CurtainCall";
+    NSUserDefaults* defaults=
+    [[NSUserDefaults alloc] initWithSuiteName:container];
+    
+    int watchMode = [defaults integerForKey:@"watchMode"];
+
+
+    PinCell *watchCell3 = [self pinCellForpin:3];
+    PinCell *watchCell7 = [self pinCellForpin:7];
+    PinCell *watchCell8 = [self pinCellForpin:8];
+    PinMode mode = kPinModeOutput;
+    PinMode modeServo = kPinModeServo;
+    [watchCell3 setMode:modeServo];
+    [self writePinMode:modeServo forPin:3];
+
+    [watchCell7 setMode:mode];
+    [self writePinMode:mode forPin:7];
+    [watchCell8 setMode:mode];
+    [self writePinMode:mode forPin:8];
+
+    switch (watchMode) {
+        case 1:
+
+
+            [self writeServoValue:1 forPin:3];
+            
+            [watchCell7 setDigitalValue:(PinState)1];
+            [self writePinState:1 forPin:7];
+            [watchCell8 setDigitalValue:(PinState)0];
+            [self writePinState:0 forPin:8];
+            [defaults setBool:NO forKey:@"watchModeChanged"];
+            [defaults synchronize];
+
+
+
+            break;
+        case 2:
+
+            // [watchCell3 setPwmValue:1700];
+            [self writeServoValue:2 forPin:3];
+            
+            [watchCell8 setDigitalValue:(PinState)1];
+            [self writePinState:1 forPin:8];
+            [watchCell7 setDigitalValue:(PinState)0];
+            [self writePinState:0 forPin:7];
+            [defaults setBool:NO forKey:@"watchModeChanged"];
+            [defaults synchronize];
+
+            break;
+        case 3:
+
+            [self writeServoValue:3 forPin:3];
+            [watchCell7 setDigitalValue:(PinState)0];
+            [self writePinState:0 forPin:7];
+            [watchCell8 setDigitalValue:(PinState)0];
+            [self writePinState:0 forPin:8];
+            [defaults setBool:NO forKey:@"watchModeChanged"];
+            [defaults synchronize];
+            break;
+        default:
+            break;
+    }
+
+
+}
 
 - (void)enableReadReports{
     
@@ -364,15 +430,7 @@
     if (!cell) return;
     
     int state = sender.selectedSegmentIndex;
-    
-    
-    
-    
-    
-    
-    
     [cell setDigitalValue:(PinState)state];
-    
     //Send value change to BLEBB
     [self writePinState:state forPin:cell.digitalPin];
     
@@ -388,61 +446,7 @@
     
 }
 
-- (void)watchControl{
-    NSString* container =@"group.CurtainCall";
-    NSUserDefaults* defaults=
-    [[NSUserDefaults alloc] initWithSuiteName:container];
-    
-    int watchMode = [defaults integerForKey:@"watchMode"];
 
-
-    PinCell *watchCell7 = [self pinCellForpin:7];
-    PinCell *watchCell8 = [self pinCellForpin:8];
-    PinMode mode = kPinModeOutput;
-    [watchCell7 setMode:mode];
-    [self writePinMode:mode forPin:7];
-    [watchCell8 setMode:mode];
-            [self writePinMode:mode forPin:8];
-
-    switch (watchMode) {
-        case 1:
-   
-            
-            [watchCell7 setDigitalValue:(PinState)1];
-            [self writePinState:1 forPin:7];
-            [watchCell8 setDigitalValue:(PinState)0];
-            [self writePinState:0 forPin:8];
-            [defaults setBool:NO forKey:@"watchModeChanged"];
-            [defaults synchronize];
-
-
-
-            break;
-        case 2:
-
-            
-            [watchCell8 setDigitalValue:(PinState)1];
-            [self writePinState:1 forPin:8];
-            [watchCell7 setDigitalValue:(PinState)0];
-            [self writePinState:0 forPin:7];
-            [defaults setBool:NO forKey:@"watchModeChanged"];
-            [defaults synchronize];
-
-            break;
-        case 3:
-            [watchCell7 setDigitalValue:(PinState)0];
-            [self writePinState:0 forPin:7];
-            [watchCell8 setDigitalValue:(PinState)0];
-            [self writePinState:0 forPin:8];
-            [defaults setBool:NO forKey:@"watchModeChanged"];
-            [defaults synchronize];
-            break;
-        default:
-            break;
-    }
-
-
-}
 
 - (void)cellButtonTapped:(UIButton*)sender{
     
@@ -637,6 +641,30 @@
     [_delegate sendData:newData];
     
 }
+
+
+- (void)writeServoValue:(uint8_t)value forPin:(uint8_t)pin{
+    
+    //Set an Servo output pin's value
+    
+    uint8_t data0 = 0;  //Status
+    uint8_t data1 = 0;  //LSB of bitmask
+    uint8_t data2 = 0;  //MSB of bitmask
+    
+    //Analog  I/O message
+    data0 = 0xe0 + pin;
+    data1 = value & 0x7F;   //only 7 bottom bits
+    data2 = value >> 7;     //top bit in second byte
+    
+    uint8_t bytes[3] = {data0, data1, data2};
+    
+    NSData *newData = [[NSData alloc ]initWithBytes:bytes length:3];
+    
+    [_delegate sendData:newData];
+    
+}
+
+
 
 
 - (void)writePinMode:(PinMode)newMode forPin:(int)pin{
@@ -1042,6 +1070,16 @@
         case kPinModeServo:
             modeString = @"Servo";
             break;
+        case kPinModeOpenCurtain:
+            modeString = @"Open";
+            break;
+        case kPinModeCloseCurtain:
+            modeString = @"Close";
+            break;
+        case kPinModeStopCurtain:
+            modeString = @"Stop";
+            break;
+
         default:
             modeString = @"NOT FOUND";
             break;

@@ -27,7 +27,10 @@ typedef enum {
     kPinModeOutput,
     kPinModeAnalog,
     kPinModePWM,
-    kPinModeServo
+    kPinModeServo,
+    kPinModeOpenCurtain,
+    kPinModeCloseCurtain,
+    kPinModeStopCurtain
 } PinMode;
 
 @property (nonatomic, assign) id<PinCellDelegate>  delegate;

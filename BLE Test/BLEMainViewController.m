@@ -466,16 +466,6 @@
     }
 }
 
-// - (BOOL) watchModeChanged: (int*) oldMode{
-//     NSString* container =@"group.CurtainCall";
-//     NSUserDefaults* defaults=
-//     [[NSUserDefaults alloc] initWithSuiteName:container];
-    
-//     int watchMode = [defaults integerForKey:@"watchMode"];
-
-//     return watchMode==oldMode;
-
-// }
 
 - (void)peripheralDidDisconnect{
     
