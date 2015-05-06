@@ -208,6 +208,15 @@
     }
 }
 
+- (void)setIsServo:(BOOL)isServo{
+    
+    //Adjust modeControl for capability
+    if (_isServo != isServo) {
+        _isServo = isServo;
+        [self configureModeControl];
+    }
+}
+
 
 - (void)configureModeControl{
     

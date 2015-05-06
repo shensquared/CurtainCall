@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>94325152-2E90-4FF0-B146-EA335ECA35A3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Bluefruit Connect</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>BD359A21C396ADCBD5BA6DB2FF3A46FD6CBB0362</key>
 		<string>https://github.com/shensquared/CurtainCall.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Bluefruit Connect.xcodeproj</string>
+	<string>Bluefruit Connect.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>BD359A21C396ADCBD5BA6DB2FF3A46FD6CBB0362</key>

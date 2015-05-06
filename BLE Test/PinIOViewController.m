@@ -18,6 +18,8 @@
 #define MAX_CELL_COUNT 20
 #define DIGITAL_PIN_SECTION 0
 #define ANALOG_PIN_SECTION 1
+
+
 #define FIRST_DIGITAL_PIN 3
 #define LAST_DIGITAL_PIN 8
 #define FIRST_ANALOG_PIN 14
@@ -90,8 +92,6 @@
     //initialize ivars
     [self initializeCells];
     
-    //Set initial mode states
-//    [self writeInitialModeStates];
     
 }
 
@@ -116,29 +116,7 @@
 
 
 - (void)didConnect{
-    
-//    NSLog(@"Pin I/O Controller - Did Connect");
-    
-    //Respond to connection to BLE UART
-    
-    //Set all available pins as Input
-//    for (int i = 2; i <= 19; i++) {
-//        //Skip reserved pins
-//        if ((i > LAST_DIGITAL_PIN) && (i < FIRST_ANALOG_PIN)) continue;
-//        //Write mode and set initial state
-//        [self writePinMode:kPinModeInput forPin:i];
-//        [(PinCell*)[cells objectAtIndex:i] setMode:kPinModeInput];
-//    }
-    
-    
-    //Enable analog reads
-//    for (int i = 0; i<=5; i++) {
-//        [self setAnalogValueReportingforAnalogPin:i enabled:YES];
-//    }
-    
-    //Write last two pins LOW   -   hack for prev version?
-//    [self writePinState:kPinStateLow forPin:14];
-//    [self writePinState:kPinStateLow forPin:15];
+
     
 }
 
@@ -180,19 +158,32 @@
         cell.delegate = self;
         
         //PWM pins
-        if ((i == 3) || (i == 5) || (i == 6)) {
+        if ((i == 5) || (i == 6)) {
             cell.isPWM = YES;
         }
+
+        //Servo pins
+        // if (i==3) {
+            // cell.isServo = YES;
+        // }
         
         //Digital pins
-        if (i >= FIRST_DIGITAL_PIN && i <= LAST_DIGITAL_PIN) {
+
+        if (i > FIRST_DIGITAL_PIN && i <= LAST_DIGITAL_PIN) {
             //setup digital pin
             cell.digitalPin = i;
             cell.analogPin = -1;
             cell.pinLabel.text = [NSString stringWithFormat:@"Pin %d", cell.digitalPin];
             [cell setDefaultsWithMode:kPinModeInput];
         }
-        
+        else if (i == FIRST_DIGITAL_PIN) {
+            //setup Curtain pin
+            cell.digitalPin = i;
+            cell.analogPin = -1;
+            cell.pinLabel.text = [NSString stringWithFormat:@"Curtain", cell.digitalPin];
+            [cell setDefaultsWithMode:kPinModeInput];
+        }
+
         //Analog pins
         else if (i >= FIRST_ANALOG_PIN && i <= LAST_ANALOG_PIN){
             //setup analog pin
@@ -201,14 +192,14 @@
             cell.pinLabel.text = [NSString stringWithFormat:@"Pin A%d", cell.analogPin];
             
             //debugging on pin 5
-            if (cell.analogPin == 5) {
-                [cell setDefaultsWithMode:kPinModeAnalog];
-            }
-            else{
+            // if (cell.analogPin == 5) {
+                // [cell setDefaultsWithMode:kPinModeAnalog];
+            // }
+            // else{
                 [cell setDefaultsWithMode:kPinModeInput];
-            }
+            // }
         }
-        
+
         else{
             //placeholder cell
             cell.digitalPin = -1;
@@ -873,6 +864,8 @@
     else if (section == ANALOG_PIN_SECTION){
         count = LAST_ANALOG_PIN - FIRST_ANALOG_PIN + 1;
     }
+
+
     
     return count;
     
@@ -892,11 +885,14 @@
         
     }
     
+
     else if (indexPath.section == ANALOG_PIN_SECTION){                                            //Analog Pins A0-A5
         int pin = indexPath.row + FIRST_ANALOG_PIN;
         cell = [self pinCellForpin:pin];
     }
     
+
+
     if (cell == nil){
         NSLog(@"-------> making a placeholder cell");
         cell = [[PinCell alloc]init];

@@ -25,6 +25,12 @@
 @property (strong, nonatomic) IBOutlet HelpViewController                *helpViewController;
 @property (strong, nonatomic) IBOutlet UITextView                        *debugConsole;
 
+@property (strong, nonatomic) IBOutlet UIButton *openButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *closeButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *stopButton;
+
 - (id)initWithDelegate:(id<PinIOViewControllerDelegate>)aDelegate;
 - (void)didConnect;
 - (void)digitalControlChanged:(UISegmentedControl*)sender;

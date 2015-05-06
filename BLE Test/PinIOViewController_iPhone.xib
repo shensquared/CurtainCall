@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6724" systemVersion="14E11f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PinIOViewController">
@@ -33,28 +32,24 @@
                 <subviews>
                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="left" fixedFrame="YES" text="Pin 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWh-vo-RI6" userLabel="Label - Pin">
                         <rect key="frame" x="14" y="6" width="56" height="22"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="left" fixedFrame="YES" text="Input" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ce2-Wt-Gy4" userLabel="Label - Mode">
                         <rect key="frame" x="14" y="27" width="56" height="18"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
                     <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" fixedFrame="YES" text="Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKq-by-hdS" userLabel="Label - Value">
                         <rect key="frame" x="235" y="7" width="64" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </label>
                     <segmentedControl opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h4a-NC-uK2" userLabel="Segmented Control - Mode">
                         <rect key="frame" x="14" y="55" width="271" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <segments>
                             <segment title="Input"/>
                             <segment title="Output"/>
@@ -62,7 +57,6 @@
                     </segmentedControl>
                     <segmentedControl opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SSc-4q-1dh" userLabel="Segmented Control - Value">
                         <rect key="frame" x="14" y="105" width="271" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <segments>
                             <segment title="Low"/>
                             <segment title="High"/>
@@ -70,7 +64,6 @@
                     </segmentedControl>
                     <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="32q-x8-O5J" userLabel="Button - Toggle Cell">
                         <rect key="frame" x="0.0" y="0.0" width="299" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                         <state key="normal">
                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -82,7 +75,6 @@
                     </button>
                     <slider hidden="YES" opaque="NO" tag="106" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="H4v-zF-Vme" userLabel="Slider - Value">
                         <rect key="frame" x="11" y="109" width="276" height="29"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </slider>
                 </subviews>
@@ -95,14 +87,10 @@
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" style="grouped" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="q4d-iJ-RdI" userLabel="Pin I/O View">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="7b5-OG-3Ec"/>
                     </constraints>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <inset key="scrollIndicatorInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="44"/>
                     <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
@@ -112,7 +100,6 @@
                 </tableView>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mv5-DB-TxX">
                     <rect key="frame" x="228" y="4" width="72" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="DEBUG!">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -124,7 +111,6 @@
                 </button>
                 <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.90000000000000002" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" indicatorStyle="white" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OM8-34-eZf" userLabel="Text View - Debug">
                     <rect key="frame" x="20" y="38" width="280" height="390"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="hW3-u9-D2D"/>
@@ -143,9 +129,7 @@
                 <constraint firstItem="OM8-34-eZf" firstAttribute="top" secondItem="4pg-hr-bCM" secondAttribute="top" constant="38" id="UKd-9s-wnn"/>
                 <constraint firstAttribute="bottom" secondItem="q4d-iJ-RdI" secondAttribute="bottom" constant="44" id="uzq-VB-atT"/>
             </constraints>
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <customObject id="UiI-1G-fVn" customClass="HelpViewController">
             <connections>
@@ -159,7 +143,6 @@
             <subviews>
                 <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="26M-PO-aGQ">
                     <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="320" id="QtU-GC-ZpG"/>
                         <constraint firstAttribute="height" constant="44" id="WdV-ET-gi6"/>
@@ -176,7 +159,6 @@
                 </navigationBar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYa-lV-rnc">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="22" id="jiz-bt-akC"/>
@@ -185,7 +167,6 @@
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cSI-jn-4wf">
                     <rect key="frame" x="20" y="86" width="280" height="462"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="280" id="Nep-Fp-YUg"/>
                     </constraints>
@@ -320,7 +301,70 @@
                 <constraint firstItem="cSI-jn-4wf" firstAttribute="top" secondItem="26M-PO-aGQ" secondAttribute="bottom" constant="20" id="lEd-aj-TJu"/>
                 <constraint firstItem="AYa-lV-rnc" firstAttribute="top" secondItem="XTO-Cj-gaH" secondAttribute="top" id="uzn-Hf-Ee1"/>
             </constraints>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <nil key="simulatedStatusBarMetrics"/>
         </view>
+        <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="150" id="bIS-XI-aSG" userLabel="Pin Cell Digital" customClass="PinCell">
+            <rect key="frame" x="0.0" y="0.0" width="299" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bIS-XI-aSG" id="vgx-8p-6IX">
+                <rect key="frame" x="0.0" y="0.0" width="299" height="147"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="left" fixedFrame="YES" text="Pin 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CiT-RG-JVz" userLabel="Label - Pin">
+                        <rect key="frame" x="14" y="6" width="56" height="22"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="101" contentMode="left" fixedFrame="YES" text="Input" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYF-I4-N6j" userLabel="Label - Mode">
+                        <rect key="frame" x="14" y="27" width="56" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </label>
+                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" fixedFrame="YES" text="Low" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeD-54-1kS" userLabel="Label - Value">
+                        <rect key="frame" x="235" y="7" width="64" height="30"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </label>
+                    <segmentedControl opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="MWV-Lh-Xs6" userLabel="Segmented Control - Mode">
+                        <rect key="frame" x="14" y="55" width="271" height="30"/>
+                        <segments>
+                            <segment title="Input"/>
+                            <segment title="Output"/>
+                        </segments>
+                    </segmentedControl>
+                    <segmentedControl opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Lph-Lv-udR" userLabel="Segmented Control - Value">
+                        <rect key="frame" x="14" y="105" width="271" height="30"/>
+                        <segments>
+                            <segment title="Low"/>
+                            <segment title="High"/>
+                        </segments>
+                    </segmentedControl>
+                    <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bc1-eu-wWZ" userLabel="Button - Toggle Cell">
+                        <rect key="frame" x="0.0" y="0.0" width="299" height="44"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                        <state key="normal">
+                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <state key="highlighted">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                    </button>
+                    <slider hidden="YES" opaque="NO" tag="106" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="255" translatesAutoresizingMaskIntoConstraints="NO" id="WAk-ST-ucp" userLabel="Slider - Value">
+                        <rect key="frame" x="11" y="109" width="276" height="29"/>
+                        <color key="minimumTrackTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </slider>
+                </subviews>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </tableViewCell>
     </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
